@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Ridiculous Word Replacer",
+  "version": "1.0",
+  "description": "Makes websites sound ridiculous on demand.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_title": "Make it Ridiculous!"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
