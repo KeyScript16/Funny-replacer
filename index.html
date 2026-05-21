@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridiculous Text Transformer</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f0f2f5; color: #333; }
+        textarea { width: 100%; height: 200px; padding: 10px; box-sizing: border-box; font-size: 16px; border: 2px solid #ccc; border-radius: 8px; }
+        button { background: #ff4757; color: white; border: none; padding: 15px; width: 100%; font-size: 18px; font-weight: bold; border-radius: 8px; margin-top: 10px; cursor: pointer; }
+        .output { background: white; padding: 15px; border-radius: 8px; margin-top: 20px; border: 1px solid #ddd; white-space: pre-wrap; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h2>😜 Ridiculous Text Tool</h2>
+    <p>Paste text from any website below to transform it:</p>
+    <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+    <button onclick="transformText()">Make it Ridiculous!</button>
+    
+    <h3>Result:</h3>
+    <div class="output" id="outputText">Your funny text will appear here...</div>
+
+    <script>
+        function transformText() {
+            let text = document.getElementById("inputText").value;
+            const wordsMap = [
+                ["problem", "kerfuffle"],
+                ["the", "the legendary"],
+                ["business", "clown show"],
+                ["money", "shiny sky-pebbles"],
+                ["important", "super-duper serious"],
+                ["technology", "dark magic"],
+                ["people", "meat-sacks"]
+            ];
+
+            wordsMap.forEach(([original, funny]) => {
+                const regex = new RegExp(`\\b${original}\\b`, 'gi');
+                text = text.replace(regex, funny);
+            });
+
+            document.getElementById("outputText").innerText = text;
+        }
+    </script>
+</body>
+</html>
